@@ -35,3 +35,20 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Terraform plan output
+*.tfplan
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Testing
+coverage.out
+
+# Misc
+.env
