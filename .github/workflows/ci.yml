@@ -49,3 +49,22 @@ jobs:
             terraform -chdir="$d" init -backend=false -input=false
             terraform -chdir="$d" validate
           done
+      
+            - name: Setup terraform-docs
+        uses: terraform-docs/gh-actions@v1
+        with:
+          version: v0.17.0
+
+      - name: Verify terraform-docs are up to date
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./tools/terraform-docs/generate.sh
+          if ! git diff --exit-code; then
+            echo ""
+            echo "terraform-docs output is out of date. Run:"
+            echo "  ./tools/terraform-docs/generate.sh"
+            echo ""
+            git diff
+            exit 1
+          fi
