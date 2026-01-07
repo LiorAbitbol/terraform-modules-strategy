@@ -64,15 +64,4 @@ terraform destroy
 - Review CI workflows under .github/workflows
 - Extend this repo with additional patterns or environments
 
-
 ---
-
-## How reviewers interpret this
-
-A short Getting Started guide signals:
-- empathy for consumers
-- documentation discipline
-- platform thinking (onboarding matters)
-- restraint (you didn’t over-document)
-
-That’s all upside.
