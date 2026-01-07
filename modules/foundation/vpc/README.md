@@ -65,8 +65,8 @@ No modules.
 | <a name="input_azs"></a> [azs](#input\_azs) | List of availablity zones to use. | `list(string)` | n/a | yes |
 | <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | CIDR block for the VPC. | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Base name used for VPC and related resources. | `string` | n/a | yes |
-| <a name="input_private_subnet_cidr"></a> [private\_subnet\_cidr](#input\_private\_subnet\_cidr) | CIDR blocks for private subnets (one per AZ). | `list(string)` | n/a | yes |
-| <a name="input_public_subnet_cidr"></a> [public\_subnet\_cidr](#input\_public\_subnet\_cidr) | CIDR blocks for public subnets (one per AZ). | `list(string)` | n/a | yes |
+| <a name="input_private_subnet_cidrs"></a> [private\_subnet\_cidrs](#input\_private\_subnet\_cidrs) | CIDR blocks for private subnets (one per AZ). | `list(string)` | n/a | yes |
+| <a name="input_public_subnet_cidrs"></a> [public\_subnet\_cidrs](#input\_public\_subnet\_cidrs) | CIDR blocks for public subnets (one per AZ). | `list(string)` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply to all resources. | `map(string)` | `{}` | no |
 
 ## Outputs

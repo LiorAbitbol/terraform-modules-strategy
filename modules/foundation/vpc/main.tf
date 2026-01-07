@@ -26,7 +26,7 @@ resource "aws_subnet" "public" {
   for_each = {
     for idx, az in var.azs :
     az => {
-      cidr = var.public_subnet_cidr[idx]
+      cidr = var.public_subnet_cidrs[idx]
     }
   }
 
@@ -47,7 +47,7 @@ resource "aws_subnet" "private" {
   for_each = {
     for idx, az in var.azs :
     az => {
-      cidr = var.private_subnet_cidr[idx]
+      cidr = var.private_subnet_cidrs[idx]
     }
   }
 
