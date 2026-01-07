@@ -29,8 +29,7 @@ terraform-modules-strategy/
 │   ├──  dev/        # Example environment using pattern modules
 ├── tests/
 │   ├──  terratest/  # Integration tests for critical modules
-└── tools/
-    └──  precommit/  # Local developer tooling
+└── tools/           # Local developer tooling
 ```
 
 ---
