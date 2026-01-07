@@ -48,7 +48,7 @@ resource "aws_security_group_rule" "ingress" {
   to_port   = each.value.to_port
 
   source_security_group_id = length(each.value.security_groups) > 0 ? each.value.security_groups[0] : null
-  
+
   self = (
     length(each.value.security_groups) > 0 ? null :
     each.value.self == true ? true : null
