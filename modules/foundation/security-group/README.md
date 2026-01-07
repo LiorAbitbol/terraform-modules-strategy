@@ -52,7 +52,7 @@ module "sg" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.27.0 |
 
 ## Modules
 
@@ -72,7 +72,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_description"></a> [description](#input\_description) | Description for the security group. | `string` | `"Managed by Terraform"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the security group. | `string` | n/a | yes |
-| <a name="input_rules"></a> [rules](#input\_rules) | List of security group rules.<br><br>Each rule supports:<br>- type: "ingress" or "egress"<br>- protocol: "tcp", "udp", "-1" (all), etc.<br>- from\_port/to\_port: required unless protocol is "-1"<br>- cidr\_block / ipv6\_cidr\_block / prefix\_list\_ids / security\_groups: optional source/destination<br>- description: optional | <pre>list(object({<br>        type            = string<br>        protocol        = string <br>        from_port       = number <br>        to_port         = number <br>        cidr_blocks     = optional(list(string), [])<br>        ipv6_cidr_block = optional(list(string), [])<br>        prefix_list_ids = optional(list(string), [])<br>        security_groups = optional(list(string), [])<br>        self            = optional(bool, false)<br>        description     = optional(string, null)<br>    }))</pre> | `[]` | no |
+| <a name="input_rules"></a> [rules](#input\_rules) | List of security group rules.<br><br>Each rule supports:<br>- type: "ingress" or "egress"<br>- protocol: "tcp", "udp", "-1" (all), etc.<br>- from\_port/to\_port: required unless protocol is "-1"<br>- cidr\_block / ipv6\_cidr\_block / prefix\_list\_ids / security\_groups: optional source/destination<br>- description: optional | <pre>list(object({<br>    type            = string<br>    protocol        = string<br>    from_port       = number<br>    to_port         = number<br>    cidr_blocks     = optional(list(string), [])<br>    ipv6_cidr_block = optional(list(string), [])<br>    prefix_list_ids = optional(list(string), [])<br>    security_groups = optional(list(string), [])<br>    self            = optional(bool, false)<br>    description     = optional(string, null)<br>  }))</pre> | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply to all resources. | `map(string)` | `{}` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC ID where the security group will be created. | `string` | n/a | yes |
 
