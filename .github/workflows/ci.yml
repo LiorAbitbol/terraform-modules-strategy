@@ -50,7 +50,7 @@ jobs:
             terraform -chdir="$d" validate
           done
       
-            - name: Setup terraform-docs
+      - name: Setup terraform-docs
         uses: terraform-docs/gh-actions@v1
         with:
           version: v0.17.0
