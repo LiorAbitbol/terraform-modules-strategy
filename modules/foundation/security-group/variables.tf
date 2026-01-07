@@ -35,7 +35,7 @@ EOT
     ipv6_cidr_block = optional(list(string), [])
     prefix_list_ids = optional(list(string), [])
     security_groups = optional(list(string), [])
-    self            = optional(bool, false)
+    self            = optional(bool, null)
     description     = optional(string, null)
   }))
 
