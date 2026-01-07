@@ -50,10 +50,21 @@ jobs:
             terraform -chdir="$d" validate
           done
       
-      - name: Setup terraform-docs
-        uses: terraform-docs/gh-actions@v1
-        with:
-          version: v0.17.0
+      - name: Install terraform-docs
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="0.17.0"
+          curl -sSLo /tmp/terraform-docs.tar.gz \
+            "https://github.com/terraform-docs/terraform-docs/releases/download/v${VERSION}/terraform-docs-v${VERSION}-linux-amd64.tar.gz"
+          tar -xzf /tmp/terraform-docs.tar.gz -C /tmp
+          sudo mv /tmp/terraform-docs /usr/local/bin/terraform-docs
+          terraform-docs version
+
+      - name: Ensure scripts are executable
+        shell: bash
+        run: |
+          chmod +x tools/terraform-docs/generate.sh
 
       - name: Verify terraform-docs are up to date
         shell: bash
