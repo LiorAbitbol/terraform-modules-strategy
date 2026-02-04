@@ -65,7 +65,7 @@ module "app_bucket" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.31.0 |
 
 ## Modules
 
@@ -84,7 +84,21 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_block_public_acls"></a> [block\_public\_acls](#input\_block\_public\_acls) | Block public ACLs on the bucket. | `bool` | `true` | no |
+| <a name="input_block_public_policy"></a> [block\_public\_policy](#input\_block\_public\_policy) | Block public bucket policies. | `bool` | `true` | no |
+| <a name="input_encryption_enabled"></a> [encryption\_enabled](#input\_encryption\_enabled) | Enable server-side encryption for the bucket. | `bool` | `true` | no |
+| <a name="input_ignore_public_acls"></a> [ignore\_public\_acls](#input\_ignore\_public\_acls) | Ignore public ACLs on the bucket. | `bool` | `true` | no |
+| <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | KMS key ID for encryption. If not provided, AWS managed encryption (AES256) is used. | `string` | `null` | no |
+| <a name="input_lifecycle_rules"></a> [lifecycle\_rules](#input\_lifecycle\_rules) | List of lifecycle rules for the bucket.<br><br>Each rule supports:<br>- id: unique identifier for the rule<br>- enabled: whether the rule is enabled<br>- prefix: object key prefix filter (optional)<br>- expiration\_days: number of days until objects expire (optional)<br>- transition\_days: number of days until transition (optional)<br>- transition\_storage\_class: storage class to transition to (optional) | <pre>list(object({<br>    id                       = string<br>    enabled                  = bool<br>    prefix                   = optional(string, null)<br>    expiration_days          = optional(number, null)<br>    transition_days          = optional(number, null)<br>    transition_storage_class = optional(string, null)<br>  }))</pre> | `[]` | no |
+| <a name="input_logging_enabled"></a> [logging\_enabled](#input\_logging\_enabled) | Enable access logging for the bucket. | `bool` | `false` | no |
+| <a name="input_logging_target_bucket"></a> [logging\_target\_bucket](#input\_logging\_target\_bucket) | Target bucket for access logs. Required if logging\_enabled is true. | `string` | `null` | no |
+| <a name="input_logging_target_prefix"></a> [logging\_target\_prefix](#input\_logging\_target\_prefix) | Prefix for access log object keys. | `string` | `"logs/"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the S3 bucket. Must be globally unique. | `string` | n/a | yes |
+| <a name="input_restrict_public_buckets"></a> [restrict\_public\_buckets](#input\_restrict\_public\_buckets) | Restrict public bucket policies. | `bool` | `true` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply to all resources. | `map(string)` | `{}` | no |
+| <a name="input_versioning"></a> [versioning](#input\_versioning) | Enable versioning for the bucket. | `bool` | `false` | no |
 
 ## Outputs
 
