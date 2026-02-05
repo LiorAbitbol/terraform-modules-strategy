@@ -11,6 +11,7 @@ with low-level infrastructure resources.
 - One VPC with public and private subnets
 - Default application security group
 - Opinionated networking baseline via `app-network` pattern
+- Opinionated sqs and sns baseline via `event-driven` pattern
 
 ## Usage
 
