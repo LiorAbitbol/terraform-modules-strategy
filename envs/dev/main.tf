@@ -2,10 +2,12 @@ provider "aws" {
   region = var.aws_region
 }
 
+# 6-character suffix for unique resource names
 resource "random_id" "suffix" {
   byte_length = 6
 }
 
+# Network infrastructure
 module "app_network" {
   source = "../../modules/patterns/app-network"
 
@@ -22,6 +24,7 @@ module "app_network" {
   tags = var.tags
 }
 
+# Event-driven infrastructure
 module "event_driven" {
   source = "../../modules/patterns/event-driven"
 
