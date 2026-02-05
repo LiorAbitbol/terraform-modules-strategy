@@ -55,3 +55,4 @@ coverage.out
 
 # Misc
 .env
+.tmp
